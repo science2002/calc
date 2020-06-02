@@ -11,19 +11,19 @@ text-align: center;
 body {
 background-color: <!-- #ff9933; -->
 }
-.calculator {
-width: 350px;
-height: 320px;
+.calculatore {
+width: 330px;
+height: 280px;
 background-color: <!-- #c0c0c0; -->
 box-shadow: 0px 0px 0px 10px #666;
-border: 5px solid black;
+border: 2px solid black;
 border-radius: 10px;
 }
 #display {
-width: 320px;
+width: 300px;
 height: 40px;
-text-align: right;
-background-color: black;
+text-align: left;
+background-color: black; <!-- black;  sfondo risultati-->
 border: 3px solid white;
 font-size: 18px;
 left: 2px;
@@ -32,7 +32,7 @@ color: #7fff00;
 }
 .btnTop{
 color: white;
-background-color: #6f6f6f;
+background-color: #6433FF; <!-- alternativa orig #6f6f6f; -->
 font-size: 14px;
 margin: auto;
 width: 50px;
@@ -40,7 +40,7 @@ height: 25px;  <!--in origine avevo messo 25px-->
 }
 .btnNum {
 color: white;
-background-color: black;
+background-color: #1F1066; <!-- black; tasti num.-->
 font-size: 14px;
 margin: auto;
 width: 50px;
@@ -48,7 +48,7 @@ height: 25px;
 }
 .btnMath {
 color: white;
-background-color: #ff4561;
+background-color: #641273; <!-- #ff4561; -->
 font-size: 14px;
 margin: auto;
 width: 50px;
@@ -56,7 +56,7 @@ height: 25px;
 }
 .btnOpps {
 color: white;
-background-color: #ff9933;
+background-color: #5D5472; <!-- #ff9933; -->
 font-size: 14px;
 margin: auto;
 width: 50px;
@@ -65,11 +65,11 @@ height: 25px;
 </style>
 <body>
 <!-- <div class = title >Calcolatore GPM per Test Univr</div> -->
-<form name="sci-calc">
-<table class="calculator" cellspacing="0" cellpadding="1">
+<form name="sci-calcolatrice">
+<table class="calculatore" cellspacing="1" cellpadding="5" BORDER="0">
 <tr> <!-- copyright start -->
 <td colspan="5">
-<p style="text-align: center; font-size:16px; background-color: red; Line-height:15px;">Calcolatore GPM Per Test Univr</p>
+<p style="text-align: center; font-size:16px; background-color: #64BFDD; Line-height:15px;">Calcolatore GPM Per Test Univr</p>
 </td>
 </tr><!-- copyright end-->
 <tr>
@@ -78,9 +78,10 @@ height: 25px;
 <tr>
 <td><input type="button" class="btnTop" name="btnTop" value="C" onclick="this.form.display.value= 0 "></td>
 <td><input type="button" class="btnTop" name="btnTop" value="<--" onclick="deleteChar(this.form.display)"></td>
-<td><input type="button" class="btnTop" name="btnTop" value="=" onclick="if(checkNum(this.form.display.value)) { compute(this.form) }"></td>
-<td><input type="button" class="btnOpps" name="btnOpps" value="&#960;" onclick="addChar(this.form.display,'3.14159265359')"></td>
-<td><input type="button" class="btnMath" name="btnMath" value="%" onclick=" percent(this.form.display)"></td>
+<td><input type="button" class="btnMath" name="btnMath" value="cos" onclick="if(checkNum(this.form.display.value)) { cos(this.form) }"></td>
+<td><input type="button" class="btnMath" name="btnMath" value="sin" onclick="if(checkNum(this.form.display.value)) { sin(this.form) }"></td>
+<td><input type="button" class="btnMath" name="btnMath" value="tan" onclick="if(checkNum(this.form.display.value)) { tan(this.form) }"></td>
+
 </tr>
 <tr>
 <td><input type="button" class="btnNum" name="btnNum" value="7" onclick="addChar(this.form.display, '7')"></td>
@@ -112,9 +113,10 @@ height: 25px;
 <tr>
 <td><input type="button" class="btnMath" name="btnMath" value="(" onclick="addChar(this.form.display, '(')"></td>
 <td><input type="button" class="btnMath" name="btnMath" value=")" onclick="addChar(this.form.display,')')"></td>
-<td><input type="button" class="btnMath" name="btnMath" value="cos" onclick="if(checkNum(this.form.display.value)) { cos(this.form) }"></td>
-<td><input type="button" class="btnMath" name="btnMath" value="sin" onclick="if(checkNum(this.form.display.value)) { sin(this.form) }"></td>
-<td><input type="button" class="btnMath" name="btnMath" value="tan" onclick="if(checkNum(this.form.display.value)) { tan(this.form) }"></td>
+<td><input type="button" class="btnMath" name="btnMath" value="%" onclick=" percent(this.form.display)"></td>
+<td><input type="button" class="btnOpps" name="btnOpps" value="&#960;" onclick="addChar(this.form.display,'3.14159265359')"></td>
+<td><input type="button" class="btnTop" name="btnTop" value="=" onclick="if(checkNum(this.form.display.value)) { compute(this.form) }"></td>
+
 </tr>
 </table>
 </form>
